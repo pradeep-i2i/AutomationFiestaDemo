@@ -14,8 +14,8 @@ public class ListIncidents extends PreAndPost{
 	public ListIncidents(RemoteWebDriver driver, ExtentTest test) {	
 		this.driver = driver;
 		this.test = test;
-		driver.switchTo().defaultContent();
-		driver.switchTo().frame("gsft_main");
+		/*driver.switchTo().defaultContent();
+		driver.switchTo().frame("gsft_main");*/
 		PageFactory.initElements(driver,this);
 	}
 	 
@@ -24,6 +24,8 @@ public class ListIncidents extends PreAndPost{
 	
 	@FindBy(xpath="(//a[@class='linked formlink'])[1]") 
 	private WebElement eleSearchResult;	
+	
+		
 	
 	public ListIncidents typeAndEnterSearch(String data) {	
 		typeAndEnter(eleSearch,data);
@@ -34,5 +36,14 @@ public class ListIncidents extends PreAndPost{
 		verifyExactText(eleSearchResult, data);
 		return this;
 	}	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }

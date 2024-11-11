@@ -114,38 +114,27 @@ public class WebDriverServiceImpl extends WebDriverListener implements WebDriver
 	}
 	
 	
-	public void clickElementInsideShadowRoot() {
+	public void clickElementInsideShadowRoot(String querySelector) {
 		String text = "";
 		try {
 			
-			WebElement shadowHost1 = driver.findElement(By.xpath("//*[@app-id='a84adaf4c700201072b211d4d8c260b7']")); 
-			// Get the first shadow root
-			JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-			WebElement shadowRoot1 = (WebElement) jsExecutor.executeScript("return arguments[0].shadowRoot", shadowHost1);
+			Thread.sleep(5000);
 			
-			// Find element inside the shadow root
-	        WebElement shadowHost2 = shadowRoot1.findElement(By.xpath("//sn-canvas-appshell-root[@component-id='mnpthcl']"));
-	        WebElement shadowRoot2 = (WebElement) jsExecutor.executeScript("return arguments[0].shadowRoot", shadowHost2);
-	        
-	        WebElement shadowHost3 = shadowRoot2.findElement(By.xpath("//sn-canvas-appshell-layout[@component-id='mnpthcl-snCanvasAppshellLayout']"));
-	        WebElement shadowRoot3 = (WebElement) jsExecutor.executeScript("return arguments[0].shadowRoot", shadowHost3);
-	        
-	        WebElement shadowHost4 = shadowRoot3.findElement(By.xpath("//sn-polaris-layout[@component-id='mnpthcl-polarisLayout']"));
-	        WebElement shadowRoot4 = (WebElement) jsExecutor.executeScript("return arguments[0].shadowRoot", shadowHost4);
-	        
-	        WebElement shadowHost5 = shadowRoot4.findElement(By.xpath("//sn-polaris-header[@dir='ltr']"));
-	        WebElement shadowRoot5 = (WebElement) jsExecutor.executeScript("return arguments[0].shadowRoot", shadowHost5);
-	        
-	        WebElement shadowElement = shadowRoot5.findElement(By.xpath("//div[@aria-label='All']"));
-	        
-	        // Interact with the element
-	        shadowElement.click();
-	        
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			
+			WebElement ele = (WebElement) js.executeScript(querySelector);
+			
+			/*WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			wait.until(ExpectedConditions.elementToBeClickable(ele));*/
+				   
+				ele.click();
+				
 			reportStep("The element "+text+" is clicked", "PASS");
 		} catch (InvalidElementStateException e) {
 			reportStep("The element: "+text+" could not be clicked", "FAIL");
 		} 
 		catch (JavascriptException e) {
+			System.out.println(e.getMessage());
 		    reportStep("JavaScript execution failed: " + e.getMessage(), "FAIL");
 		}
 		catch (WebDriverException e) {
@@ -153,7 +142,38 @@ public class WebDriverServiceImpl extends WebDriverListener implements WebDriver
 		} 
 		
 		catch (Exception e) {
+			 System.out.println(e.getMessage());
 		    reportStep("An unexpected error occurred: " + e.getMessage(), "FAIL");
+		   
+		}
+	}
+	
+	public void swicthToFrameInsideShadowRoot(String frameQuerySelector) {
+		String text = "";
+		try {
+			
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			
+			WebElement ele = (WebElement) js.executeScript(frameQuerySelector);
+				   
+			switchToFrame(ele);
+			
+			reportStep("The frame "+text+" is switched", "PASS");
+		} catch (InvalidElementStateException e) {
+			reportStep("The element: "+text+" could not be clicked", "FAIL");
+		} 
+		catch (JavascriptException e) {
+			System.out.println(e.getMessage());
+		    reportStep("JavaScript execution failed: " + e.getMessage(), "FAIL");
+		}
+		catch (WebDriverException e) {
+			reportStep("Unknown exception occured while clicking in the field :", "FAIL");
+		} 
+		
+		catch (Exception e) {
+			 System.out.println(e.getMessage());
+		    reportStep("An unexpected error occurred: " + e.getMessage(), "FAIL");
+		   
 		}
 	}
 

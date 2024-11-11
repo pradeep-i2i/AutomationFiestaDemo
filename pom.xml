@@ -5,10 +5,12 @@
 	<groupId>org.testleaf</groupId>
 	<version>2.0.1</version>
 	<dependencies>
+		
+		
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>4.0.0-alpha-4</version>
+			<version>4.13.0</version>
 		</dependency>
 		<dependency>
 			<groupId>io.rest-assured</groupId>

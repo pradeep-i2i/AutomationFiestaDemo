@@ -1,26 +1,18 @@
 package lib.selenium;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 
-import io.restassured.RestAssured;
+import lib.factory.BrowserFactory;
+import lib.factory.BrowserType;
 import lib.utils.ConfigUtil;
 import lib.utils.DataInputProvider;
 import lib.utils.HTMLReporter;
@@ -40,9 +32,9 @@ public class PreAndPost extends WebDriverServiceImpl{
 		startTestCase(testCaseName, testDescription);		
 	}
 	
-	@Parameters("env")
+	 @Parameters({"browser", "env"})
 	@BeforeMethod
-	public void beforeMethod(String environment) throws FileNotFoundException, IOException {
+	public void beforeMethod(String browser,String environment) throws FileNotFoundException, IOException {
 		
 		System.setProperty("env", environment); // Set the system property for environment
         ConfigUtil.loadEnvironmentProperties();
@@ -52,21 +44,18 @@ public class PreAndPost extends WebDriverServiceImpl{
 		startTestModule(nodes);
 		test.assignAuthor(authors);
 		test.assignCategory(category);
-		HTMLReporter.svcTest = test;		
+		HTMLReporter.svcTest = test;	
 		
-		// settings for launching browser
-		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
-		//System.setProperty("webdriver.chrome.silentOutput", "true");
-
-		// Start browser
-		//webdriver = new ChromeDriver();
-		//driver = new EventFiringWebDriver(webdriver);
+		if(browser.equalsIgnoreCase("chrome"))
+			driver = BrowserFactory.createBrowser(BrowserType.CHROME,URL);
+		else if(browser.equalsIgnoreCase("edge"))
+			driver = BrowserFactory.createBrowser(BrowserType.EDGE,URL);
 		
-		driver = new ChromeDriver();
-		//driver.register(this);
+		/*System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+		 driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get(URL);
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);*/
 	
 	}
 

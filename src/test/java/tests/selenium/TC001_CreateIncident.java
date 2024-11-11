@@ -14,7 +14,7 @@ public class TC001_CreateIncident extends PreAndPost{
 		testCaseName = "Create Incident (Using Selenium)";
 		testDescription = "Create a new Incident";
 		nodes = "Incident Management";
-		authors = "Babu";
+		authors = "Hari";
 		category = "UI";
 		dataSheetName = "TC002";
 
@@ -25,12 +25,13 @@ public class TC001_CreateIncident extends PreAndPost{
 		new LoginPage(driver,test)
 		.loginApp()
 		.clickAll()
-		.searchUsingFilter(filter)
-		.clickCreateNew()
+		.clickIncident()
+		.clickNew()
 		.getIncidentNumber()
 		.selectUser(user)
 		.typeShortDescription(short_desc)
-		.clickSubmit();
+		.clickSubmit()
+		.verifyIncidentCreation();
 	}
 
 

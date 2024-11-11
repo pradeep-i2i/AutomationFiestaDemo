@@ -21,6 +21,7 @@ import org.testng.annotations.Parameters;
 import com.aventstack.extentreports.ExtentTest;
 
 import io.restassured.RestAssured;
+import lib.utils.ConfigUtil;
 import lib.utils.DataInputProvider;
 import lib.utils.HTMLReporter;
 
@@ -45,10 +46,13 @@ public class PreAndTest extends HTMLReporter{
 		startTestCase(testCaseName, testDescription);		
 	}
 	
-	
+	@Parameters("env")
 	@BeforeMethod
-	public void beforeMethod() throws FileNotFoundException, IOException {
+	public void beforeMethod(String environment) throws FileNotFoundException, IOException {
 		//for reports		
+		System.setProperty("env", environment); // Set the system property for environment
+        ConfigUtil.loadEnvironmentProperties();
+        String URL = ConfigUtil.getProperty("url");
 		svcTest = startTestModule(nodes);
 		svcTest.assignAuthor(authors);
 		svcTest.assignCategory(category);
@@ -56,6 +60,7 @@ public class PreAndTest extends HTMLReporter{
 		Properties prop = new Properties();
 		prop.load(new FileInputStream(new File("./src/test/resources/config.properties")));
 		
+		//RestAssured.baseURI = "https://"+prop.getProperty("server")+"/"+prop.getProperty("resources")+"/";
 		RestAssured.baseURI = "https://"+prop.getProperty("server")+"/"+prop.getProperty("resources")+"/";
 		RestAssured.authentication = RestAssured.basic(prop.getProperty("username"), prop.getProperty("password"));
 

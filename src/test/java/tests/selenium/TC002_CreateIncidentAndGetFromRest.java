@@ -18,7 +18,7 @@ public class TC002_CreateIncidentAndGetFromRest extends PreAndPost{
 		testCaseName = "Create Incident and Verify";
 		testDescription = "Create Incident (Using Selenium) and Verify using REST";
 		nodes = "Incident Management";
-		authors = "Babu";
+		authors = "Hari";
 		category = "UI & API";
 		dataSheetName = "TC002";
 
@@ -27,15 +27,18 @@ public class TC002_CreateIncidentAndGetFromRest extends PreAndPost{
 	@Test(dataProvider = "fetchData")
 	public void createIncident(String filter, String user, String short_desc) {
 		
-		// Selenium - Create Incident		
+		
+		
 		new LoginPage(driver,test)
-			.loginApp()
-			.searchUsingFilter(filter)
-			.clickCreateNew()
-			.getIncidentNumber()
-			.selectUser(user)
-			.typeShortDescription(short_desc)
-			.clickSubmit();
+		.loginApp()
+		.clickAll()
+		.clickIncident()
+		.clickNew()
+		.getIncidentNumber()
+		.selectUser(user)
+		.typeShortDescription(short_desc)
+		.clickSubmit()
+		.verifyIncidentCreation();
 		
 		
 		// Verify Using REST Assured		

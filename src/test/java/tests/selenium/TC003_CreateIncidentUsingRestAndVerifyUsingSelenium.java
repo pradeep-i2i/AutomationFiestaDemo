@@ -20,7 +20,7 @@ public class TC003_CreateIncidentUsingRestAndVerifyUsingSelenium extends PreAndP
 		testCaseName = "Search Incident (Using Selenium) After Creating Incident (Using REST Assured)";
 		testDescription = "Create Incident (Using REST Assured) and Search with Selenium";
 		nodes = "Incident Management";
-		authors = "Babu";
+		authors = "Hari";
 		category = "UI & API";
 		dataSheetName = "TC003";
 
@@ -40,8 +40,9 @@ public class TC003_CreateIncidentUsingRestAndVerifyUsingSelenium extends PreAndP
 		// Selenium - Find Incident		
 		new LoginPage(driver,test)
 			.loginApp()
-			.searchUsingFilter(filter)
-			.clickOpen()
+			.clickAll()
+			.clickIncident()
+			.clickBreadCrumb_All()
 			.typeAndEnterSearch(incidentNumber)
 			.verifyResult(incidentNumber);
 	

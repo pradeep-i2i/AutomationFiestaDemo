@@ -15,8 +15,10 @@ public class CreateNewIncident extends PreAndPost{
 	public CreateNewIncident(RemoteWebDriver driver, ExtentTest test) {	
 		this.driver = driver;
 		this.test = test;
-		driver.switchTo().defaultContent();
-		driver.switchTo().frame("gsft_main");
+		/*driver.switchTo().defaultContent();
+		String newButtonFrameElement = "return document.querySelector('macroponent-f51912f4c700201072b211d4d8c26010').shadowRoot.querySelector(\"iframe[id='gsft_main']\")";
+		swicthToFrameInsideShadowRoot(newButtonFrameElement);
+		driver.switchTo().frame("gsft_main");*/
 		PageFactory.initElements(driver,this);
 	}
 	 
@@ -51,4 +53,12 @@ public class CreateNewIncident extends PreAndPost{
 		return this;		
 	}
 	
+	
+	//a[@aria-label="Open record: INC0010036"]
+	
+	public CreateNewIncident verifyIncidentCreation() {
+		WebElement ele = locateElement("id","incident_breadcrumb");
+		verifyDisplayed(ele);
+		return this;		
+	}
 }
