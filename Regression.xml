@@ -7,9 +7,8 @@
 	<test name="Test">
 		<classes>
 			<class name="tests.selenium.TC001_CreateIncident" />
-			
-			<class name="tests.selenium.TC003_CreateIncidentUsingRestAndVerifyUsingSelenium" />
 			<class name="tests.selenium.TC002_CreateIncidentAndGetFromRest" />
+			<class name="tests.selenium.TC003_CreateIncidentUsingRestAndVerifyUsingSelenium" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

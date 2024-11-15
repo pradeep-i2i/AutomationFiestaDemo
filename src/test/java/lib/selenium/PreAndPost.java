@@ -2,7 +2,9 @@ package lib.selenium;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.logging.LogManager;
 
+import org.slf4j.bridge.SLF4JBridgeHandler;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
@@ -24,6 +26,9 @@ public class PreAndPost extends WebDriverServiceImpl{
 	
 	@BeforeSuite
 	public void beforeSuite() {
+		// Set up JUL-to-SLF4J bridge
+		LogManager.getLogManager().reset();
+		SLF4JBridgeHandler.install();
 		startReport();
 	}
 	

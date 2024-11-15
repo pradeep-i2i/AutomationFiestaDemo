@@ -10,55 +10,90 @@ import com.aventstack.extentreports.ExtentTest;
 
 import lib.selenium.PreAndPost;
 
-public class CreateNewIncident extends PreAndPost{
-	
-	public CreateNewIncident(RemoteWebDriver driver, ExtentTest test) {	
+import common.CustomLogger;
+
+public class CreateNewIncident extends PreAndPost {
+	private final CustomLogger logger = CustomLogger.getInstance();
+	public CreateNewIncident(RemoteWebDriver driver, ExtentTest test) {
 		this.driver = driver;
 		this.test = test;
-		/*driver.switchTo().defaultContent();
-		String newButtonFrameElement = "return document.querySelector('macroponent-f51912f4c700201072b211d4d8c26010').shadowRoot.querySelector(\"iframe[id='gsft_main']\")";
-		swicthToFrameInsideShadowRoot(newButtonFrameElement);
-		driver.switchTo().frame("gsft_main");*/
-		PageFactory.initElements(driver,this);
+		PageFactory.initElements(driver, this);
+		logger.info("Initializing CreateNewIncident object");
 	}
-	 
-	@FindBy(id="incident.number") 
-	private WebElement eleIncidentNumber;	
-	
-	@FindBy(id="sys_display.incident.caller_id")
-	private WebElement eleCallerId;	
-	
-	@FindBy(how=How.ID,using="incident.short_description")
+
+	@FindBy(id = "incident.number")
+	private WebElement eleIncidentNumber;
+
+	@FindBy(id = "sys_display.incident.caller_id")
+	private WebElement eleCallerId;
+
+	@FindBy(how = How.ID, using = "incident.short_description")
 	private WebElement eleShortDescription;
-	
-	public CreateNewIncident getIncidentNumber() {	
-		pause(3000);
-		incidentNumber = getAttribute(eleIncidentNumber,"value");
+
+	public CreateNewIncident getIncidentNumber() {
+		try {
+			pause(3000);
+			incidentNumber = getAttribute(eleIncidentNumber, "value");
+			logger.info("Retrieved Incident Number: " + incidentNumber);
+		} catch (Exception e) {
+			String locator = "incident.number";
+			logger.error("Failed to retrieve Incident Number [Locator: " + locator + "] - " + e.getMessage(), e);
+			reportStep("Failed to retrieve Incident Number [Locator: " + locator + "]", "FAIL");
+		}
 		return this;
-	}	
+	}
 
 	public CreateNewIncident selectUser(String data) {
-		typeAndChoose(eleCallerId, data);
+		try {
+			logger.info("Selecting user: " + data);
+			typeAndChoose(eleCallerId, data);
+		} catch (Exception e) {
+			String locator = "sys_display.incident.caller_id";
+			logger.error("Failed to select user [Locator: " + locator + "] - " + e.getMessage(), e);
+			reportStep("Failed to select user [Locator: " + locator + "]", "FAIL");
+		}
 		return this;
-	}	
-	
+	}
+
 	public CreateNewIncident typeShortDescription(String data) {
-		type(eleShortDescription, data);
-		return this;		
+		try {
+			logger.info("Typing short description: " + data);
+			type(eleShortDescription, data);
+		} catch (Exception e) {
+			String locator = "incident.short_description";
+			logger.error("Failed to type short description [Locator: " + locator + "] - " + e.getMessage(), e);
+			reportStep("Failed to type short description [Locator: " + locator + "]", "FAIL");
+		}
+		return this;
 	}
-	
+
 	public CreateNewIncident clickSubmit() {
-		WebElement eleSubmit = locateElement("sysverb_insert");
-		click(eleSubmit);
-		return this;		
+		try {
+			String locator = "sysverb_insert";
+			logger.info("Clicking Submit button [Locator: " + locator + "]");
+			WebElement eleSubmit = locateElement(locator);
+			click(eleSubmit);
+			logger.info("Submit button clicked successfully");
+		} catch (Exception e) {
+			String locator = "sysverb_insert";
+			logger.error("Failed to click Submit button [Locator: " + locator + "] - " + e.getMessage(), e);
+			reportStep("Failed to click Submit button [Locator: " + locator + "]", "FAIL");
+		}
+		return this;
 	}
-	
-	
-	//a[@aria-label="Open record: INC0010036"]
-	
+
 	public CreateNewIncident verifyIncidentCreation() {
-		WebElement ele = locateElement("id","incident_breadcrumb");
-		verifyDisplayed(ele);
-		return this;		
+		try {
+			String locator = "incident_breadcrumb";
+			logger.info("Verifying Incident creation [Locator: " + locator + "]");
+			WebElement ele = locateElement("id","incident_breadcrumb");
+			verifyDisplayed(ele);
+			logger.info("Incident creation verified successfully");
+		} catch (Exception e) {
+			String locator = "incident_breadcrumb";
+			logger.error("Failed to verify Incident creation [Locator: " + locator + "] - " + e.getMessage(), e);
+			reportStep("Failed to verify Incident creation [Locator: " + locator + "]", "FAIL");
+		}
+		return this;
 	}
 }

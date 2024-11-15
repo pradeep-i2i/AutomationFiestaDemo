@@ -1,0 +1,191 @@
+2024-11-15 23:11:21 INFO  - ====================START OF TEST CASE====================
+2024-11-15 23:11:21 INFO  - Test Case 'Create Incident (Using Selenium)' has started
+2024-11-15 23:11:23 INFO  - Launching Chrome Browser
+2024-11-15 23:11:31 WARN  - Unable to find CDP implementation matching 129
+2024-11-15 23:11:31 WARN  - Unable to find version of CDP to use for 129.0.6668.90. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.13.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2024-11-15 23:11:31 INFO  - Maximized window
+2024-11-15 23:11:38 INFO  - Url launched
+2024-11-15 23:11:38 INFO  - waiting for load
+2024-11-15 23:11:38 INFO  - Initializing the LoginPage object and loading properties file
+2024-11-15 23:11:38 INFO  - Successfully loaded configuration file
+2024-11-15 23:11:38 INFO  - Initialized the HomePage elements and switched to default content.
+2024-11-15 23:11:38 INFO  - Initializing CreateNewIncident object
+2024-11-15 23:11:38 INFO  - --------==[ Step 1 - Login to the Web Application ]==--------
+2024-11-15 23:11:38 INFO  - Fetching credentials from configuration file
+2024-11-15 23:11:38 INFO  - Credentials fetched successfully for the User: admin
+2024-11-15 23:11:38 INFO  - Entering Login workflow
+2024-11-15 23:11:38 INFO  - Entering username: admin
+2024-11-15 23:11:39 INFO  - Entering password
+2024-11-15 23:11:39 INFO  - Clicking the login button
+2024-11-15 23:11:55 INFO  - Login button clicked successfully
+2024-11-15 23:11:55 INFO  - Initialized the HomePage elements and switched to default content.
+2024-11-15 23:11:55 INFO  - --------==[ Step 2 - Click the All link in the header ]==--------
+2024-11-15 23:11:55 INFO  - Attempting to click the 'All' link in the header [Selector: return document.querySelector('macroponent-f51912f4c700201072b211d4d8c26010').shadowRoot.querySelector('sn-canvas-appshell-root').querySelector('sn-canvas-appshell-layout').querySelector('sn-polaris-layout').shadowRoot.querySelector('sn-polaris-header').shadowRoot.querySelector("div.sn-polaris-tab[aria-label='All']")]
+2024-11-15 23:12:01 INFO  - Successfully clicked the 'All' link.
+2024-11-15 23:12:01 INFO  - --------==[ Step 3 - Click the Incident ]==--------
+2024-11-15 23:12:01 INFO  - Attempting to click the 'Incident' link return document.querySelector('macroponent-f51912f4c700201072b211d4d8c26010').shadowRoot
+    .querySelector('sn-canvas-appshell-root')
+    .querySelector('sn-canvas-appshell-layout')
+    .querySelector('sn-polaris-layout')
+    .shadowRoot.querySelector('sn-polaris-header').shadowRoot
+    .querySelector('sn-polaris-menu').shadowRoot
+    .querySelector('sn-collapsible-list').shadowRoot
+    .querySelector("a[aria-label='Incidents']")]
+2024-11-15 23:12:07 INFO  - Successfully clicked the 'Incident' link
+2024-11-15 23:12:07 INFO  - --------==[ Step 4 - Click the new button ]==--------
+2024-11-15 23:12:07 INFO  - Attempting to click the 'New' button [XPath: //button[@id='sysverb_new']]
+2024-11-15 23:12:15 INFO  - Successfully clicked the 'New' button.
+2024-11-15 23:12:15 INFO  - Initializing CreateNewIncident object
+2024-11-15 23:12:15 INFO  - --------==[ Step 5 - Get the Incident number  ]==--------
+2024-11-15 23:12:19 INFO  - Retrieved Incident Number: INC0010271
+2024-11-15 23:12:19 INFO  - --------==[ Step 6 - Select the user ]==--------
+2024-11-15 23:12:19 INFO  - Selecting user: Abel
+2024-11-15 23:12:24 INFO  - --------==[ Step 7 - Enter short description ]==--------
+2024-11-15 23:12:24 INFO  - Typing short description: This is automated test from Makaia
+2024-11-15 23:12:25 INFO  - --------==[ Step 8 - Click the Submit button ]==--------
+2024-11-15 23:12:25 INFO  - Clicking Submit button [Locator: sysverb_insert]
+2024-11-15 23:12:28 INFO  - Submit button clicked successfully
+2024-11-15 23:12:28 INFO  - --------==[ Step 9 - Verify the newly created incident ]==--------
+2024-11-15 23:12:28 INFO  - Verifying Incident creation [Locator: incident_breadcrumb]
+2024-11-15 23:12:28 INFO  - Incident creation verified successfully
+2024-11-15 23:12:28 INFO  - Test Case 'Create Incident (Using Selenium)' has ended
+2024-11-15 23:12:28 INFO  - ====================END OF TEST CASE====================
+2024-11-15 23:12:29 INFO  - Launching Chrome Browser
+2024-11-15 23:12:33 WARN  - Unable to find CDP implementation matching 129
+2024-11-15 23:12:33 WARN  - Unable to find version of CDP to use for 129.0.6668.90. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.13.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2024-11-15 23:12:34 INFO  - Maximized window
+2024-11-15 23:12:40 INFO  - Url launched
+2024-11-15 23:12:40 INFO  - waiting for load
+2024-11-15 23:12:49 INFO  - Initializing the LoginPage object and loading properties file
+2024-11-15 23:12:49 INFO  - Successfully loaded configuration file
+2024-11-15 23:12:49 INFO  - Fetching credentials from configuration file
+2024-11-15 23:12:49 INFO  - Credentials fetched successfully for the User: admin
+2024-11-15 23:12:49 INFO  - Entering Login workflow
+2024-11-15 23:12:49 INFO  - Entering username: admin
+2024-11-15 23:12:51 INFO  - Entering password
+2024-11-15 23:12:53 INFO  - Clicking the login button
+2024-11-15 23:12:59 INFO  - Login button clicked successfully
+2024-11-15 23:12:59 INFO  - Initialized the HomePage elements and switched to default content.
+2024-11-15 23:12:59 INFO  - Attempting to click the 'All' link in the header [Selector: return document.querySelector('macroponent-f51912f4c700201072b211d4d8c26010').shadowRoot.querySelector('sn-canvas-appshell-root').querySelector('sn-canvas-appshell-layout').querySelector('sn-polaris-layout').shadowRoot.querySelector('sn-polaris-header').shadowRoot.querySelector("div.sn-polaris-tab[aria-label='All']")]
+2024-11-15 23:13:05 INFO  - Successfully clicked the 'All' link.
+2024-11-15 23:13:05 INFO  - Attempting to click the 'Incident' link return document.querySelector('macroponent-f51912f4c700201072b211d4d8c26010').shadowRoot
+    .querySelector('sn-canvas-appshell-root')
+    .querySelector('sn-canvas-appshell-layout')
+    .querySelector('sn-polaris-layout')
+    .shadowRoot.querySelector('sn-polaris-header').shadowRoot
+    .querySelector('sn-polaris-menu').shadowRoot
+    .querySelector('sn-collapsible-list').shadowRoot
+    .querySelector("a[aria-label='Incidents']")]
+2024-11-15 23:13:11 INFO  - Successfully clicked the 'Incident' link
+2024-11-15 23:13:11 INFO  - Attempting to click the 'All' breadcrumb link [XPath: //*[@id='incident_breadcrumb']//a[contains(@aria-label,'All Press enter to remove all subsequent conditions.')]]
+2024-11-15 23:13:15 INFO  - Successfully clicked the 'All' breadcrumb link.
+2024-11-15 23:13:15 INFO  - Initializing ListIncidents object
+2024-11-15 23:13:15 INFO  - Typing and entering search data: INC0010273 [Locator: (//input[@class='form-control'])[1]]
+2024-11-15 23:13:16 INFO  - Search data entered successfully
+2024-11-15 23:13:16 INFO  - Verifying search result matches: INC0010273 [Locator: (//a[@class='linked formlink'])[1]]
+2024-11-15 23:13:17 INFO  - Search result verified successfully
+2024-11-15 23:13:17 WARN  - onError
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:403)
+	at java.base/sun.nio.ch.SocketChannelImpl.implRead(SocketChannelImpl.java:435)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:493)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:254)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2024-11-15 23:13:17 WARN  - Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:403)
+	at java.base/sun.nio.ch.SocketChannelImpl.implRead(SocketChannelImpl.java:435)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:493)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:254)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2024-11-15 23:13:17 INFO  - Launching Chrome Browser
+2024-11-15 23:13:21 WARN  - Unable to find CDP implementation matching 129
+2024-11-15 23:13:21 WARN  - Unable to find version of CDP to use for 129.0.6668.90. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.13.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2024-11-15 23:13:21 INFO  - Maximized window
+2024-11-15 23:13:28 INFO  - Url launched
+2024-11-15 23:13:28 INFO  - waiting for load
+2024-11-15 23:13:28 INFO  - Initializing the LoginPage object and loading properties file
+2024-11-15 23:13:28 INFO  - Successfully loaded configuration file
+2024-11-15 23:13:28 INFO  - Fetching credentials from configuration file
+2024-11-15 23:13:28 INFO  - Credentials fetched successfully for the User: admin
+2024-11-15 23:13:28 INFO  - Entering Login workflow
+2024-11-15 23:13:28 INFO  - Entering username: admin
+2024-11-15 23:13:29 INFO  - Entering password
+2024-11-15 23:13:29 INFO  - Clicking the login button
+2024-11-15 23:13:41 INFO  - Login button clicked successfully
+2024-11-15 23:13:41 INFO  - Initialized the HomePage elements and switched to default content.
+2024-11-15 23:13:41 INFO  - Attempting to click the 'All' link in the header [Selector: return document.querySelector('macroponent-f51912f4c700201072b211d4d8c26010').shadowRoot.querySelector('sn-canvas-appshell-root').querySelector('sn-canvas-appshell-layout').querySelector('sn-polaris-layout').shadowRoot.querySelector('sn-polaris-header').shadowRoot.querySelector("div.sn-polaris-tab[aria-label='All']")]
+2024-11-15 23:13:46 INFO  - Successfully clicked the 'All' link.
+2024-11-15 23:13:46 INFO  - Attempting to click the 'Incident' link return document.querySelector('macroponent-f51912f4c700201072b211d4d8c26010').shadowRoot
+    .querySelector('sn-canvas-appshell-root')
+    .querySelector('sn-canvas-appshell-layout')
+    .querySelector('sn-polaris-layout')
+    .shadowRoot.querySelector('sn-polaris-header').shadowRoot
+    .querySelector('sn-polaris-menu').shadowRoot
+    .querySelector('sn-collapsible-list').shadowRoot
+    .querySelector("a[aria-label='Incidents']")]
+2024-11-15 23:13:52 INFO  - Successfully clicked the 'Incident' link
+2024-11-15 23:13:52 INFO  - Attempting to click the 'New' button [XPath: //button[@id='sysverb_new']]
+2024-11-15 23:13:58 INFO  - Successfully clicked the 'New' button.
+2024-11-15 23:13:58 INFO  - Initializing CreateNewIncident object
+2024-11-15 23:14:01 INFO  - Retrieved Incident Number: INC0010274
+2024-11-15 23:14:01 INFO  - Selecting user: Abel
+2024-11-15 23:14:07 INFO  - Typing short description: This is automated test from Makaia
+2024-11-15 23:14:07 INFO  - Clicking Submit button [Locator: sysverb_insert]
+2024-11-15 23:14:09 INFO  - Submit button clicked successfully
+2024-11-15 23:14:09 INFO  - Verifying Incident creation [Locator: incident_breadcrumb]
+2024-11-15 23:14:09 INFO  - Incident creation verified successfully
+2024-11-15 23:14:12 WARN  - onError
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:403)
+	at java.base/sun.nio.ch.SocketChannelImpl.implRead(SocketChannelImpl.java:435)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:493)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:254)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2024-11-15 23:14:12 WARN  - Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:403)
+	at java.base/sun.nio.ch.SocketChannelImpl.implRead(SocketChannelImpl.java:435)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:493)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:254)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
